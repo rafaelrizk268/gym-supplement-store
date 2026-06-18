@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Create Account – GymSupps</title>
+  <meta name="description"
+        content="Create your free GymSupps account and start shopping premium gym supplements with fast delivery across Lebanon.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #d0a4ff 0%, #4c1d95 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+    }
+    .register-container {
+      background: white;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      margin: 2rem;
+    }
+    .register-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .input-group i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+      font-size: 1.1rem;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 15px 15px 15px 45px;
+      border: 2px solid #e1e5e9;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    .input-group input:focus {
+      outline: none;
+      border-color: #4c1d95;
+      box-shadow: 0 0 0 3px rgba(76, 29, 149, 0.1);
+    }
+    .btn {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #d0a4ff 0%, #4c1d95 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(76, 29, 149, 0.3);
+    }
+    #registerMessage {
+      margin-top: 1rem;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    #registerMessage p {
+      margin: 0;
+      font-weight: 500;
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+    .login-link a {
+      color: #4c1d95;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .login-link a:hover {
+      color: #d0a4ff;
+    }
+    @media (max-width: 768px) {
+      .register-container {
+        margin: 1rem;
+        padding: 2rem;
+      }
+      .register-container h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Create Account</h2>
+    <form id="registerForm" autocomplete="off">
+      <div class="input-group">
+        <i class="fas fa-user"></i>
+        <input type="text" name="username" placeholder="Username" required autocomplete="username">
+      </div>
+      <div class="input-group">
+        <i class="fas fa-id-card"></i>
+        <input type="text" name="name" placeholder="Full Name" required autocomplete="name">
+      </div>
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" name="email" placeholder="Email" required autocomplete="email">
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" placeholder="Password" required autocomplete="new-password">
+      </div>
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required autocomplete="new-password">
+      </div>
+      <button type="submit" class="btn">Register</button>
+      <div id="registerMessage"></div>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </div>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const messageDiv = document.getElementById('registerMessage');
+      fetch('backend/register.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          messageDiv.innerHTML = '<p style="color: green;">Registration successful! Redirecting to login...</p>';
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 1200);
+        } else {
+          messageDiv.innerHTML = '<p style="color: red;">' + (data.message || 'Registration failed. Please try again.') + '</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        messageDiv.innerHTML = '<p style="color: red;">An error occurred. Please try again.</p>';
+      });
+    });
+  </script>
+</body>
+</html> 

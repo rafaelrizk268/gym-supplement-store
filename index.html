@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GymSupps – Premium Gym Supplements | Shop Online</title>
+  <meta name="description"
+        content="Shop top-quality gym supplements in Lebanon — protein powders, pre-workouts, creatine, vitamins and more. Browse our full range and order online with fast delivery.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (Facebook, WhatsApp link previews, etc.) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="GymSupps – Premium Gym Supplements | Shop Online">
+  <meta property="og:description" content="Shop top-quality gym supplements in Lebanon — protein powders, pre-workouts, creatine, vitamins and more. Fast delivery.">
+  <meta property="og:site_name"   content="GymSupps">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="GymSupps – Premium Gym Supplements | Shop Online">
+  <meta name="twitter:description" content="Shop top-quality gym supplements in Lebanon — protein powders, pre-workouts, creatine, vitamins and more.">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <canvas id="star-bg"></canvas>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <div class="logo">
+        GymSupps
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="../backend/logout.php" class="logout-btn">Logout</a></li>
+      </ul>
+      <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section hero-blend">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Fuel Your Fitness</h1>
+      <p>Premium Supplements for Every Body</p>
+      <a href="#products" class="btn shop-now">Shop Now</a>
+    </div>
+  </section>
+  
+
+<hr class="purple-divider">
+
+
+
+<!-- Featured Products Section -->
+<section id="featured" class="featured-section">
+  <div class="container">
+    <div style="text-align:center;">
+    <h2>✨FEATURED✨</h2>
+  </div>
+    <div class="products-grid" id="featured-products-grid">
+      <!-- Featured product cards will be injected by JS -->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Products Section -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="search-bar">
+        <input type="text" id="productSearch" placeholder="Search for a product...">
+      </div>
+      <div class="products-grid">
+        <!-- Product cards will be injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container about-content">
+      <div class="about-image">
+        <img src="gym-images/about-pic.jpg" alt="About Us">
+      </div>
+     <div class="about-text">
+        <h2>About Us</h2>
+        <p>At <strong>GymSupps</strong>, we're more than just a supplement store — 
+          we're your dedicated fitness partner. Founded with a passion for
+           health, performance, and community, our mission is to help you
+            fuel your goals with top-quality supplements you can trust.
+             Whether you're a seasoned athlete, a gym newcomer, or someone
+              working on building a healthier lifestyle, we offer carefully
+               selected products to support strength, endurance, recovery,
+                and overall well-being. Our knowledgeable team is here to
+                 guide you with honest advice, tailored recommendations, and
+                  a commitment to helping you achieve your best self — inside
+                   and outside the gym.</p>
+                   <h2>Our Story</h2>
+  <p>
+    Founded by fitness enthusiasts in the heart of Beirut, GymSupps started with a simple mission: to make high-quality, effective supplements accessible to everyone — from beginners to elite athletes.
+  </p>
+  <p>
+    It all began when Raphael Rizk, a personal trainer turned entrepreneur, noticed how hard it was to find trusted supplements locally. Either the quality was inconsistent or the prices were unreasonable. So, he decided to change that.
+  </p>
+  <p>
+    What started as a small online shop run from a home office quickly grew into a go-to destination for serious lifters, health-conscious individuals, and gym owners across Lebanon and beyond. Every product we offer is hand-picked, tested, and backed by science — because your health and performance deserve the best.
+  </p>
+  <p>
+    At GymSupps, we're more than just a store — we're a community. 
+  </p></div>
+      
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+        <div class="thank-you-message" style="display:none;">Thank you for contacting us!</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+      <span class="close-modal" id="closeCart">&times;</span>
+      <h3>Your Cart</h3>
+      <div class="cart-items"></div>
+      <div class="cart-total"></div>
+      <button id="checkoutBtn" class="btn" style="width:100%;margin-top:1rem;">Checkout</button>
+    </div>
+  </div>
+
+<!-- Checkout -->
+<div class="checkout-modal" id="checkoutModal" style="display:none;">
+  <div class="cart-modal-content">
+    <span class="close-modal" id="closeCheckout">&times;</span>
+    <h3>Checkout</h3>
+
+
+    <form id="checkoutForm">
+      <div class="form-row">
+        <input type="text" name="customer_name" placeholder="Full Name" required>
+        <input type="email" name="customer_email" placeholder="Email" required>
+      </div>
+      <div class="form-row">
+        <input type="tel" name="phone" id="checkout_phone" placeholder="Phone (e.g. 71 234 567 or +961 71 234 567)" required autocomplete="tel" inputmode="tel">
+      </div>
+    
+      <h3>Shipping Address:</h3>
+      <input type="text" name="street_address" placeholder="Street Address" required>
+      <div class="form-row">
+        <input type="text" name="city" placeholder="City" required>
+        <input type="text" name="state" placeholder="State" required>
+        <input type="text" name="zip" placeholder="ZIP" required>
+        <select name="country" required>
+
+
+          <option value="">Country</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Australia">Australia</option>
+          <option value="Austria">Austria</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Canada">Canada</option>
+          <option value="Chile">Chile</option>
+          <option value="China">China</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Czech Republic">Czech Republic</option>
+          <option value="Denmark">Denmark</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Finland">Finland</option>
+          <option value="France">France</option>
+          <option value="Germany">Germany</option>
+          <option value="Greece">Greece</option>
+          <option value="Hong Kong">Hong Kong</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Iceland">Iceland</option>
+          <option value="India">India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Ireland">Ireland</option>
+          <option value="Israel">Israel</option>
+          <option value="Italy">Italy</option>
+          <option value="Japan">Japan</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Lebanon">Lebanon</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Morocco">Morocco</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Nigeria">Nigeria</option>
+          <option value="Norway">Norway</option>
+          <option value="Pakistan">Pakistan</option>
+          <option value="Peru">Peru</option>
+          <option value="Philippines">Philippines</option>
+          <option value="Poland">Poland</option>
+          <option value="Portugal">Portugal</option>
+          <option value="Russia">Russia</option>
+          <option value="Saudi Arabia">Saudi Arabia</option>
+          <option value="Singapore">Singapore</option>
+          <option value="South Africa">South Africa</option>
+          <option value="South Korea">South Korea</option>
+          <option value="Spain">Spain</option>
+          <option value="Sweden">Sweden</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="Thailand">Thailand</option>
+          <option value="Turkey">Turkey</option>
+          <option value="UAE">UAE</option>
+          <option value="UK">UK</option>
+          <option value="Ukraine">Ukraine</option>
+          <option value="USA">USA</option>
+          <option value="Vietnam">Vietnam</option>
+        </select>
+        
+      </div>
+    
+      <h3>Shipping Method:</h3>
+      <select name="shipping_method" required>
+        <option value="">Select Shipping Method</option>
+        <option value="standard">Standard Shipping</option>
+        <option value="express">Express Shipping</option>
+        <!-- Add more methods as needed -->
+      </select>
+    
+      <h3>Payment:</h3>
+<div class="payment-options">
+  <label>
+    <input type="radio" name="payment_method" value="card" required>
+    Credit/Debit Card
+  </label>
+  <label>
+    <input type="radio" name="payment_method" value="paypal">
+    PayPal
+  </label>
+</div>
+
+
+
+ <!-- credit/debit card required fields -->
+<div id="card-info" style="display:none;">
+  <label>
+    Card Number
+    <input type="text" name="card_number" placeholder="Card Number" autocomplete="cc-number">
+    <small>Enter your 16-digit card number without spaces or dashes.</small>
+  </label>
+  <label>
+    Expiration Date
+    <input type="text" name="card_expiry" placeholder="MM/YY" autocomplete="cc-exp">
+    <small>Use the format MM/YY, for example: 09/26.</small>
+  </label>
+  <label>
+    CVV / CVC (Card Verification Value / Code)
+    <input type="text" name="card_cvc" placeholder="CVC" autocomplete="cc-csc">
+    <small>3-digit code on the back of Visa/MasterCard<br>or 4 digits on the front of AMEX.</small>
+  </label>
+  <label>
+    Cardholder Name
+    <input type="text" name="cardholder_name" placeholder="Cardholder Name" autocomplete="cc-name">
+    <small>Enter the name exactly as it appears on your card.</small>
+  </label>
+</div>
+
+
+
+      <div id="paypal-info" style="display:none;">
+        <!-- PayPal JS SDK renders its buttons here -->
+        <div id="paypal-buttons-container"></div>
+        <p style="font-size:0.85rem;color:#888;margin-top:0.5rem;text-align:center;">
+          You will complete payment securely on PayPal.
+        </p>
+      </div>
+    
+
+
+
+      <h3>Order Summary</h3>
+      <div id="order-summary">
+        <!-- JS will fill this in -->
+      </div>
+    <br>
+      <div class="form-row">
+        <label for="agree">I agree to the terms and conditions:</label>
+        <input type="checkbox" name="agree" id="agree" required>
+      </div>
+    
+<!-- geolocation + tracking (set by store after shipment; empty at checkout) -->
+      <input type="hidden" name="latitude">
+      <input type="hidden" name="longitude">
+      <input type="hidden" name="tracking_number" id="checkout_tracking_number" value="">
+
+
+
+      <button type="submit" class="btn" id="place-order-btn">Place Order</button>
+    </form>
+    <div class="thank-you-message" style="display:none; text-align:center; padding:0.5rem 0 1rem;">
+      <p style="color:var(--purple); font-size:1.15rem; font-weight:bold; margin:0 0 0.3rem;">
+        &#10003; Your order has been placed!
+      </p>
+      <p id="thank-you-order-details" style="color:#555; margin:0 0 1.1rem; font-size:0.9rem;"></p>
+      <div id="whatsapp-confirm-wrapper"></div>
+      <button type="button" id="thank-you-done-btn" class="btn"
+              style="margin-top:1rem; background:#555; font-size:0.9rem; padding:0.5rem 1.8rem;">
+        Done
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2025 GymSupps. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+
+
+
+
+  <div id="usageDetailsModal" class="modal" style="display:none;">
+    <div class="modal-content" style="max-width:400px;max-height:70vh;overflow-y:auto;padding:2rem;position:relative;">
+      <span id="closeUsageModal" style="position:absolute;top:10px;right:20px;font-size:2rem;cursor:pointer;">&times;</span>
+      <h3 id="usageDetailsTitle"></h3>
+      <div id="usageDetailsBody"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script src="script.js"></script>
+  <script src="star-bg.js"></script>
+</body>
+</html> 

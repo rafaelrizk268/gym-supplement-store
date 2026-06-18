@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>404 – Page Not Found | GymSupps</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Head back to GymSupps and keep chasing those gains.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Make body a full-height flex column so the card stays centred
+       regardless of viewport height */
+    html { height: 100%; }
+
+    body {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── 404 centring wrapper ───────────────────────────────────────────────── */
+    .error-page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* ── Glass card ─────────────────────────────────────────────────────────── */
+    .error-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(216, 180, 248, 0.22);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+      box-shadow:
+        0 8px 48px rgba(124, 58, 237, 0.22),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    }
+
+    /* ── "404" headline ─────────────────────────────────────────────────────── */
+    .error-number {
+      font-family: 'Montserrat', sans-serif;
+      /* clamp: 6rem on small phone → 10rem on desktop */
+      font-size: clamp(6rem, 22vw, 10.5rem);
+      font-weight: 700;
+      line-height: 1;
+      margin: 0;
+      /* Gradient text */
+      background: linear-gradient(135deg, #d0a4ff 0%, #7c3aed 55%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      /* Neon glow via filter (text-shadow doesn't work on gradient text) */
+      filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.75))
+              drop-shadow(0 0 8px  rgba(192, 132, 252, 0.5));
+      /* Subtle pulse animation */
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0%,  100% { filter: drop-shadow(0 0 28px rgba(168, 85, 247, 0.75))
+                          drop-shadow(0 0  8px rgba(192, 132, 252, 0.5)); }
+      50%        { filter: drop-shadow(0 0 44px rgba(168, 85, 247, 1.0))
+                          drop-shadow(0 0 16px rgba(192, 132, 252, 0.8)); }
+    }
+
+    /* ── Dumbbell icon ──────────────────────────────────────────────────────── */
+    .error-icon {
+      font-size: 2.6rem;
+      margin: 0.6rem 0 1.1rem;
+      display: block;
+      animation: sway 2.4s ease-in-out infinite;
+    }
+
+    @keyframes sway {
+      0%,  100% { transform: rotate(-8deg); }
+      50%        { transform: rotate( 8deg); }
+    }
+
+    /* ── Sub-heading & message ──────────────────────────────────────────────── */
+    .error-heading {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.1rem, 4vw, 1.45rem);
+      font-weight: 700;
+      color: #e9d5ff;
+      margin: 0 0 0.8rem;
+    }
+
+    .error-message {
+      color: rgba(233, 213, 255, 0.78);
+      font-size: clamp(0.9rem, 3vw, 1.02rem);
+      line-height: 1.65;
+      margin: 0 0 2.2rem;
+    }
+
+    /* ── "Back to Shop" button — uses .btn from styles.css with size boost ──── */
+    .error-card .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.9rem 2.4rem;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      /* Slightly brighter glow on hover */
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .error-card .btn:hover {
+      box-shadow: 0 4px 24px rgba(124, 58, 237, 0.55);
+    }
+
+    /* ── Divider between icon and button ────────────────────────────────────── */
+    .error-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(216,180,248,0.5), transparent);
+      margin: 0 auto 2rem;
+      border: none;
+    }
+
+    /* ── Mobile tweaks ───────────────────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      .error-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Star background — same canvas + script used on index.html -->
+  <canvas id="star-bg"></canvas>
+
+  <!-- Navbar — identical to index.html so users can still navigate / access cart -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <div class="logo">GymSupps</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#featured">Featured</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="cart-icon" title="Your cart is on the main shop page">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 404 content -->
+  <main class="error-page">
+    <div class="error-card">
+
+      <div class="error-number" aria-label="Error 404">404</div>
+
+      <span class="error-icon" aria-hidden="true">🏋️</span>
+
+      <h1 class="error-heading">Page Not Found</h1>
+
+      <p class="error-message">
+        Oops! It looks like this page took a rest day.<br>
+        Let's get your gains back on track.
+      </p>
+
+      <hr class="error-divider">
+
+      <a href="index.html" class="btn">Back to Shop</a>
+
+    </div>
+  </main>
+
+  <script src="star-bg.js"></script>
+</body>
+</html>

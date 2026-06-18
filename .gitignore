@@ -1,0 +1,40 @@
+# ── Credentials & secrets ────────────────────────────────────────────
+.env
+*.env
+.env.local
+.env.*.local
+
+# ── Dependency managers ───────────────────────────────────────────────
+vendor/
+node_modules/
+composer.lock
+package-lock.json
+yarn.lock
+
+# ── IDE / editor metadata ─────────────────────────────────────────────
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── PHP runtime / debug ───────────────────────────────────────────────
+*.log
+error_log
+
+# Keep the logs/ directory itself but ignore all log files inside it
+logs/*.log
+!logs/.gitkeep
+
+# ── OS generated ─────────────────────────────────────────────────────
+desktop.ini
+ehthumbs.db
+
+# ── Build / temp ──────────────────────────────────────────────────────
+dist/
+build/
+tmp/
